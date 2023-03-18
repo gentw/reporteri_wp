@@ -1,0 +1,51 @@
+
+---Downloaded files---
+The import files for: Zox News Demo Import were successfully downloaded!
+Initial max execution time = 30
+Files info:
+Site URL = http://reporteri.net
+Data file = /usr/share/nginx/html/reporterinet/wp-content/themes/reporteri_net/import/zox-news.xml
+Widget file = /usr/share/nginx/html/reporterinet/wp-content/themes/reporteri_net/import/zoxnews.wie
+Customizer file = not defined!
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Homepage Widget Area : 
+
+Zox News: Home Featured 2 Widget - Entertainment - Imported
+Zox News: Home Dark Widget - Videos - Imported
+Zox News: Home Featured 2 Widget - Business - Imported
+Zox News: Ad Widget - No Title - Imported
+Zox News: Home Featured 1 Widget - Tech - Imported
+
+Homepage Sidebar Widget Area : 
+
+Zox News: Ad Widget - No Title - Imported
+Zox News: Side Tabber Widget - No Title - Imported
+
+Default Sidebar Widget Area : 
+
+Zox News: Ad Widget - No Title - Imported
+Zox News: Side Tabber Widget - No Title - Imported
+
+Post/Page Sidebar Widget Area : 
+
+Zox News: Ad Widget - No Title - Imported
+Zox News: Side Tabber Widget - No Title - Imported
+
+WooCommerce Sidebar Widget Area : 
+
+Cart - Cart - Imported
+Product Categories - Categories - Imported
+Filter Products by Price - Filter by price - Imported
+Products by Rating list - Top rated products - Imported
+
+
+
+---pt-ocdi/after_import---
+
