@@ -20,13 +20,13 @@
 define( 'WP_AUTO_UPDATE_CORE', false );
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'webnew' );
+define( 'DB_NAME', 'reporteri_webnew' );
 
 /** Database username */
-define( 'DB_USER', 'webnew' );
+define( 'DB_USER', 'gent' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'Gjakova123@' );
+define( 'DB_PASSWORD', 'fr33d0m' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

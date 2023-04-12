@@ -82,7 +82,6 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 .right_side .row-2 {			
     margin-top: 10px;
     height: 620px;
-    padding-left: 30px;
     padding-top: 20px;
     padding-right: 0;
     max-height: 260px;
@@ -142,15 +141,26 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 
 .right_side .row-2 .articles_below_1:first-child .articles_below_1_inner h2 {
     font-weight: normal !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
 
     background-color: rgba(206, 206, 206, 0.2);
     height: 100%;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.right_side .row-2 .articles_below_1:first-child .articles_below_1_inner h2.small {
+.right_side .row-2 .articles_below_1:last-child .articles_below_1_inner h2 {
+    font-weight: normal !important;
     font-size: 18px !important;
+
+    background-color: rgba(206, 206, 206, 0.2);
+    height: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.right_side .row-2 .articles_below_1 .articles_below_1_inner h2.small {
+    font-size: 17px !important;
     font-weight: normal !important;
 } 
 
@@ -159,11 +169,11 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 }
 
 .right_side .row-2 .articles_below_1:last-child .articles_below_1_inner{
-    padding-right:0;
+    /* padding-right:0; */
 }
 
 .right_side .row-2 .articles_below_1_inner {
-    padding: 0 20px;
+    padding: 0 5px;
 }
 
 .right_side .row-2 .articles_below_1_inner h1 {
