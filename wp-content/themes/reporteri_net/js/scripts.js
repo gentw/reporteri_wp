@@ -3713,6 +3713,8 @@ jQuery(document).ready(function($) {
       jQuery("#mvp-fly-wrap").remove();
      
       var userScroll = $(document).scrollTop();
+
+      setTimeout(function() {
         $(window).scroll(function(event){
          
           var newScroll = $(document).scrollTop();
@@ -3723,6 +3725,9 @@ jQuery(document).ready(function($) {
               $("#mvp_custom_nav_desktop").removeClass("mvp_custom_nav_desktop_fixed");
             }
         });
+      },500)
+        
+        
     }
 
     jQuery(window).scroll(function() {
