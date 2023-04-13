@@ -2711,5 +2711,4 @@ function insert_adsense_ads($content) {
 }
 add_filter('the_content', 'insert_adsense_ads');
 
-
 ?>

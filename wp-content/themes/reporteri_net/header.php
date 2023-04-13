@@ -407,6 +407,18 @@
 					
 					</section>
 
+					<?php
+					$category_slug = 'lajme';
+					$args = array(
+						'posts_per_page' => 1,
+						'post_type' => 'post',
+						'cat' => get_category_by_slug($category_slug)->term_id,
+						'orderby' => 'meta_value_num',
+						'meta_key' => 'post_views_count', // Assumes you are using a custom field to track post views
+					);
+					$most_viewed = new WP_Query($args);
+					
+					?>
 												
 						<section class="aktualitet_section">
 							
@@ -418,12 +430,17 @@
 											<h4><span class="mvp-widget-home-title">Aktualitet</span></h4>
 										</div>
 										<div>
-											<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
+											<?php if ($most_viewed->have_posts()) {
+											$most_viewed->the_post(); ?>
+											<a href="#"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
 											<p class="aktualitet_main_category">Aktualitet</p>
-											<h2 class="aktualitet_title"><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+											<h2 class="aktualitet_title"><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
 											<p class="aktualitet_description">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+												<?php echo get_the_excerpt() ?>
 											</p>
+											<?php } 
+											wp_reset_query();
+											?>
 										</div>
 									</div>
 									<div class="pure-u-md-1-3 pure-u-1-2 aktualitet_list">

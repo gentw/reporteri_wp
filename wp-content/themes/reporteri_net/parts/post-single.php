@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <?php global $author; $userdata = get_userdata($author); ?>
 
+gent 
+<?php echo get_field('post_views_count') ?>
+
 <?php if(get_field( "live_article" ) == "YES") { ?>
 	<article id="mvp-article-wrap" class="reporteri_custom_article" itemscope itemtype="http://schema.org/NewsArticle">
 	<!-- <div class="reporteri_instant_post" id="instant_post_0"></div> -->
