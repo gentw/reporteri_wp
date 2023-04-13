@@ -1028,3 +1028,23 @@ background: #195e7d !important;
 .mvp_custom_nav_desktop_fixed ul li.mvp-mega-dropdown .mvp-mega-dropdown {
     top: 70px !important;
 }
+
+
+
+.mvp-widget-dark-wrap{
+    background: #ffffff !important
+}
+.mvp-widget-dark-sub-text h2{
+    color: #000 !important
+}
+
+#mvp-vid-wide-wrap{
+    background-color: #fff !important;
+}
+
+.mvp-vid-wide-text h1.mvp-vid-wide-title{
+    color: #000000 !important;
+}
+.mvp-vid-wide-more-text p{
+    color: #000000 !important;
+}
