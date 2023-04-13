@@ -18,10 +18,10 @@
 			<div class="mvp-main-blog-cont left relative">
 				<div class="mvp-widget-home-head">
 					<h4 class="mvp-widget-home-title">
-						<span class="mvp-widget-home-title"><?php esc_html_e( 'More News', 'zox-news' ); ?></span>
+						<span class="mvp-widget-home-title"><?php esc_html_e( 'Te tjera', 'zox-news' ); ?></span>
 					</h4>
 				</div><!--mvp-widget-home-head-->
-				<div class="mvp-main-blog-out left relative">
+				<div class="mvp-main-blog-out left relative more_news_new_dsng">
 					<div class="mvp-main-blog-in">
 						<div class="mvp-main-blog-body left relative">
 							<?php if(get_option('mvp_blog_layout') == '1' ) { ?>
@@ -241,7 +241,6 @@
 							</div><!--mvp-inf-more-wrap-->
 						</div><!--mvp-main-blog-body-->
 					</div><!--mvp-main-blog-in-->
-					<?php get_sidebar('home'); ?>
 				</div><!--mvp-mmain-blog-out-->
 			</div><!--mvp-main-blog-cont-->
 		</div><!--mvp-main-box-->
