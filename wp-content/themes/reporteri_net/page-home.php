@@ -5,6 +5,7 @@
 <?php $mvp_feat_posts = get_option('mvp_feat_posts'); if ($mvp_feat_posts == "true") { ?>
 	<?php get_template_part('featured'); ?>
 <?php } ?>
+<!-- <div>REKLAMA 1</div> -->
 <?php if(get_option('mvp_home_layout') == '1' || get_option('mvp_home_layout') == '2') { ?>
 	<div id="mvp-home-widget-wrap" class="left relative">
 		<?php if ( is_active_sidebar( 'homepage-widget' ) ) { ?>
@@ -12,6 +13,7 @@
 		<?php } ?>
 	</div><!--mvp-home-widget-wrap-->
 <?php } ?>
+<!-- <div>REKLAMA 2</div> -->
 <?php if(get_option('mvp_home_layout') == '0' || get_option('mvp_home_layout') == '2') { ?>
 	<div class="mvp-main-blog-wrap left relative">
 		<div class="mvp-main-box">
@@ -233,7 +235,7 @@
 							<?php } ?>
 							<div class="mvp-inf-more-wrap left relative">
 								<?php $mvp_infinite_scroll = get_option('mvp_infinite_scroll'); if ($mvp_infinite_scroll == "true") { if (isset($mvp_infinite_scroll)) { ?>
-									<a href="#" class="mvp-inf-more-but"><?php esc_html_e( 'More Posts', 'zox-news' ); ?></a>
+									<a href="#" class="mvp-inf-more-but"><?php esc_html_e( 'Me shume', 'zox-news' ); ?></a>
 								<?php } } ?>
 								<div class="mvp-nav-links">
 									<?php if (function_exists("pagination")) { pagination($wp_query->max_num_pages); } ?>
