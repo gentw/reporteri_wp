@@ -318,7 +318,7 @@
 						</div><!--mvp-inf-more-wrap-->
 					</div><!--mvp-main-blog-body-->
 				</div><!--mvp-mvp-main-blog-in-->
-				<?php get_sidebar(); ?>
+				
 			</div><!--mvp-mvp-main-blog-out-->
 		</div><!--mvp-main-blog-cont-->
 	</div><!--mvp-main-box-->
