@@ -432,7 +432,7 @@
 										<div>
 											<?php if ($most_viewed->have_posts()) {
 											$most_viewed->the_post(); ?>
-											<a href="#"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
+											<a href="<?php echo get_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
 											<p class="aktualitet_main_category">Aktualitet</p>
 											<h2 class="aktualitet_title"><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
 											<p class="aktualitet_description">
@@ -443,39 +443,50 @@
 											?>
 										</div>
 									</div>
+									<?php
+										$latest_posts = array();
+										$category_ids = array( 219, 217, 218 );
+    									foreach ( $category_ids as $category_id ) {
+											$args = array(
+												'posts_per_page' => 1,
+												'cat' => $category_id,
+												'orderby' => 'date',
+												'order' => 'DESC',
+											);
+											$showThreeLastedFromSpecifiedCats = new WP_Query( $args );
+											if ( $showThreeLastedFromSpecifiedCats->have_posts() ) {
+												while ( $showThreeLastedFromSpecifiedCats->have_posts() ) {
+													$showThreeLastedFromSpecifiedCats->the_post();
+
+													$latest_posts[] = get_post();
+												}
+											}
+											wp_reset_postdata();
+										}
+										
+									?>
 									<div class="pure-u-md-1-3 pure-u-1-2 aktualitet_list">
+									<?php
+										foreach ( $latest_posts as $post ) {
+											setup_postdata( $post );
+									?>
 										<div class="pure-g aktualitet_list_inner">
 											<div class="pure-u-3-5">
-												<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+												<h5><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
 												<p class="aktualitet_main_category">Aktualitet</p>
 											</div>
 
 											<div class="pure-u-2-5">
-												<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
+												<a href="<?php echo get_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
 											</div>
 										</div>
 
-										<div class="pure-g aktualitet_list_inner">
-											<div class="pure-u-3-5">
-												<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-												<p class="aktualitet_main_category">Aktualitet</p>
-											</div>
+									<?php 
+										}
+									
+									wp_reset_postdata();
+									?>
 
-											<div class="pure-u-2-5">
-												<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											</div>
-										</div>
-
-										<div class="pure-g aktualitet_list_inner">
-											<div class="pure-u-3-5">
-												<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-												<p class="aktualitet_main_category">Aktualitet</p>
-											</div>
-
-											<div class="pure-u-2-5">
-												<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											</div>
-										</div>
 									</div>
 									<div class="pure-u-md-1-3 pure-u-1-1 aktualitet_opinione">
 										<div class="heading" style="position: absolute; margin-top: -60px;">
