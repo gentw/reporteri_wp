@@ -565,6 +565,7 @@
 									<?php
 											}
 										}
+										wp_reset_postdata();
 									?>
 								
 									
@@ -593,26 +594,38 @@
 									</div>
 									<div class="pure-u-md-1-2">
 											<div class="pure-g">
+											<?php	$args = array(
+														'posts_per_page' => 2,
+														'post_type' => 'post',
+														'category_name' => 'lajme',
+														'orderby' => 'date',
+														'order' => 'DESC',
+														'post__not_in' => $excluded_posts
+													);
+													$last_news3 = new WP_Query($args);
+			
+													if ( $last_news3->have_posts() ) {
+														while ( $last_news3->have_posts() ) {
+															$last_news3->the_post();
+														
+												?>
 												<div class="pure-u-md-1-2 pure-u-1-2 aktualitet_more_inner">
 													<div>
-													<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-														<p class="aktualitet_main_category">Aktualitet</p>
-														<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+													<a href="<?php echo get_permalink(); ?>"><img style="width: 100%;" src="<?php echo get_the_post_thumbnail_url()?>"></a>
+														<p class="aktualitet_main_category"><?php echo (isset(get_the_category()[0]->name)) ? get_the_category()[0]->name: 'Aktualitet'  ?> / <?php echo (isset(get_the_category()[1]->name)) ? get_the_category()[1]->name: ''  ?></p>
+														<h2><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 														<p class="aktualitet_description">
-															Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+															<?php echo substr(get_the_excerpt(), 0, 100); ?>...
 														</p>
-													</div>	
+													</div>		
 												</div>
-												<div class="pure-u-md-1-2 pure-u-1-2 aktualitet_more_inner">
-													<div>
-														<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-														<p class="aktualitet_main_category">Aktualitet</p>
-														<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-														<p class="aktualitet_description">
-															Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-														</p>
-													</div>	
-												</div>
+												<?php 
+													}
+
+												}
+												wp_reset_postdata();	
+												?>
+												
 											</div>
 									</div>
 								</div>
