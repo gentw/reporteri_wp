@@ -11,7 +11,7 @@ $related_posts_query = new WP_Query( $related_posts_args );
 
 <div class="reporteri_related">
     <div class="related-col">
-        <img style="width: 100%;" src="/wp-content/uploads/2023/03/reklama.jpg">
+        <img style="width:300px; height: 250px;" src="/wp-content/uploads/2023/03/reklama.jpg">
     </div>
     <?php if ( $related_posts_query->have_posts() ) : ?>
     <div class="related-col">
