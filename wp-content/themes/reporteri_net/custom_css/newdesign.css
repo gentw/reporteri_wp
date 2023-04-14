@@ -508,12 +508,18 @@ https://github.com/pure-css/pure/blob/master/LICENSE
         margin-right: auto;
         z-index: -1;
     }
+    
     .mvp-main-box{
         width: 992px;
     } 
+
+
 }
 
 @media only screen and (min-width: 1140px) { 
+   .reporteri_single_article #mvp-main-body-wrap{
+        width: 900px !important;
+    }
     #mvp-main-body-wrap {
         width: 1140px;
         float: none;
@@ -894,6 +900,9 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 #mvp-post-head{
     padding: 10px 0;
 }
+.reporteri_single_article #mvp-article-cont{
+    width: 900px !important;
+}
 #mvp-article-cont {
     width: 1000px;
     margin: 0 auto;
@@ -903,8 +912,12 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     width: 1000px;
 }
 
+#mvp-article-wrap #mvp-post-main{
+    width: 900px!important;
+}
+
 .mvp-post-soc-wrap {
-    margin-left: 40px;
+    margin-left: -68px;
 }
 
 #mvp-content-body{
@@ -1082,6 +1095,21 @@ background: #195e7d !important;
   .mvp_custom_nav_desktop_fixed .logo_main {
     width: 200px !important;
   }
+
+  .mvp-post-soc-out {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .mvp-post-soc-in {
+    margin-left:0 !important;
+  }
+  .mvp-post-soc-wrap {
+    margin-right:0;
+  }
+  .reporteri_single_article #mvp-content-body {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    }
 }
 
 .mvp-nav-menu ul li.mvp-mega-dropdown .mvp-mega-dropdown {
@@ -1118,4 +1146,28 @@ h4.mvp-widget-home-title::before {
 h4.mvp-widget-home-title{
     text-align: left !important;
     margin-left: 5px !important;
+}
+
+
+/***
+SINGLE POST
+**/
+
+h1.mvp-post-title{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.avatar{
+    display: none!important;
+}
+
+.mvp-author-info-name{
+    display: none!important;    
+}
+.mvp-author-info-text{
+    margin: 8px 0 0 0!important;
+}
+#mvp-post-head {
+    margin-bottom: 15px;
 }
