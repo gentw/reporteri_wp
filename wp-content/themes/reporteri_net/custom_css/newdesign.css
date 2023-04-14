@@ -603,7 +603,8 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 }
 .aktualitet_opinione .author_image {
     width: 40px;
-    border-radius: 50px;
+    height: 40px;
+    border-radius: 100%;
 }
 .aktualitet_opinione .author_name {
     padding-left: 10px;

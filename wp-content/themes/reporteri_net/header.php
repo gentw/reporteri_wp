@@ -433,7 +433,7 @@
 											<?php if ($most_viewed->have_posts()) {
 											$most_viewed->the_post(); ?>
 											<a href="<?php echo get_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
-											<p class="aktualitet_main_category">Aktualitet</p>
+											<p class="aktualitet_main_category"><?php echo get_post_meta( get_the_ID(), 'category_name', true );?></p>
 											<h2 class="aktualitet_title"><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
 											<p class="aktualitet_description">
 												<?php echo get_the_excerpt() ?>
@@ -473,7 +473,7 @@
 										<div class="pure-g aktualitet_list_inner">
 											<div class="pure-u-3-5">
 												<h5><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
-												<p class="aktualitet_main_category">Aktualitet</p>
+												<p class="aktualitet_main_category"><?php echo (isset(get_the_category()[0]->name)) ? get_the_category()[0]->name: 'Aktualitet'  ?> / <?php echo (isset(get_the_category()[1]->name)) ? get_the_category()[1]->name: ''  ?></p>
 											</div>
 
 											<div class="pure-u-2-5">
@@ -492,73 +492,74 @@
 										<div class="heading" style="position: absolute; margin-top: -60px;">
 											<h4><span class="mvp-widget-home-title">Opinione</span></h4>
 										</div>
-										<div class="aktualitet_opinione_inner">
-											<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-											<div class="aktualitet_opinione_author">
-												<img class="author_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtMnBs1-2kNl6Pem57dj7D_pYSFZsP9wzC-VIYoRn4iQ&s">
-												<p class="author_name">Reporteri.net</p>
-											</div>
-										</div>
+										<?php
+										$args = array(
+											'posts_per_page' => 3,
+											'post_type' => 'post',
+											'category_name' => 'opinione',
+											'orderby' => 'date',
+											'order' => 'DESC',
+										);
+										$opinionet = new WP_Query($args);
 
+										if ( $opinionet->have_posts() ) {
+											while ( $opinionet->have_posts() ) {
+												$opinionet->the_post();
+										?>
 										<div class="aktualitet_opinione_inner">
-											<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+											<h5><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
+											<?php if(get_field("opinion") == "JO") { ?>
 											<div class="aktualitet_opinione_author">
 												<img class="author_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtMnBs1-2kNl6Pem57dj7D_pYSFZsP9wzC-VIYoRn4iQ&s">
 												<p class="author_name">Reporteri.net</p>
 											</div>
-										</div>
-
-										<div class="aktualitet_opinione_inner">
-											<h5><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+											<?php } else { ?>
 											<div class="aktualitet_opinione_author">
-												<img class="author_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtMnBs1-2kNl6Pem57dj7D_pYSFZsP9wzC-VIYoRn4iQ&s">
-												<p class="author_name">Reporteri.net</p>
+												<img class="author_image" src="<?php echo get_field('imazhi_opinion') ?>">
+												<p class="author_name"><?php echo get_field('emri_opinion') ?></p>
 											</div>
+											<?php } ?>
 										</div>
+										
+										<?php
+											}
+										}
+											wp_reset_postdata();
+										?>
 									</div>
 								</div>
 
 								<div class="pure-g aktualitet__row-2">
+									<?php
+										$args = array(
+											'posts_per_page' => 4,
+											'post_type' => 'post',
+											'category_name' => 'lajme',
+											'orderby' => 'date',
+											'order' => 'DESC',
+										);
+										$last_news2 = new WP_Query($args);
+
+										if ( $last_news2->have_posts() ) {
+											while ( $last_news2->have_posts() ) {
+												$last_news2->the_post();
+									?>
 									<div class="pure-u-md-1-4 pure-u-1-2 aktualitet_more_inner">
 										<div>
-										<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											<p class="aktualitet_main_category">Aktualitet</p>
-											<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
+										<a href="<?php echo get_permalink(); ?>"><img style="width: 100%;" src="<?php echo get_the_post_thumbnail_url()?>"></a>
+											<p class="aktualitet_main_category"><?php echo (isset(get_the_category()[0]->name)) ? get_the_category()[0]->name: 'Aktualitet'  ?> / <?php echo (isset(get_the_category()[1]->name)) ? get_the_category()[1]->name: ''  ?></p>
+											<h2><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 											<p class="aktualitet_description">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+												<?php echo substr(get_the_excerpt(), 0, 100); ?>...
 											</p>
 										</div>								
 									</div>
-									<div class="pure-u-md-1-4 pure-u-1-2 aktualitet_more_inner">
-										<div>
-											<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											<p class="aktualitet_main_category">Aktualitet</p>
-											<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-											<p class="aktualitet_description">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-											</p>
-										</div>	
-									</div>
-									<div class="pure-u-md-1-4 pure-u-1-2 aktualitet_more_inner">
-										<div>
-											<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											<p class="aktualitet_main_category">Aktualitet</p>
-											<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-											<p class="aktualitet_description">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-											</p>
-										</div>	
-									</div>
-									<div class="pure-u-md-1-4 pure-u-1-2 aktualitet_more_inner">
-										<div>
-											<a href="#"><img src="https://telegrafi.com/wp-content/uploads/2023/01/dialogu-e1629999682391-780x439-1-696x392-1-780x439.jpg"></a>
-											<p class="aktualitet_main_category">Aktualitet</p>
-											<h2><a href="#">Marrëveshja Kosovë-Serbi e largon ndikimin rus, por jo brenda natës</a></h2>
-											<p class="aktualitet_description">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-											</p>
-										</div>	
-									</div>
+									<?php
+											}
+										}
+									?>
+								
+									
 								</div>
 
 								<div class="pure-g aktualitet__row-2" style="background: rgba(229, 199, 0, 0.1);">
