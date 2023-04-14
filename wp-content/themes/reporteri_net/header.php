@@ -574,7 +574,19 @@
 								<div class="pure-g aktualitet__row-2" style="background: rgba(229, 199, 0, 0.1);">
 									<div class="pure-u-md-1-2 col-feat6">
 										<section id="mvp-feat6-wrap" class="left relative">
-											<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => get_option('mvp_feat_posts_tags'), 'posts_per_page' => '1', 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
+										<?php
+										$args = array(
+											'posts_per_page' => 1,
+											'post_type' => 'post',
+											'category_name' => 'intervista',
+											'orderby' => 'date',
+											'order' => 'DESC',
+										);
+										$most_viewed = new WP_Query($args);
+
+										if ($most_viewed->have_posts()) {
+											$most_viewed->the_post();
+										?>
 												<a href="<?php the_permalink(); ?>" rel="bookmark">
 												<div id="mvp-feat6-main" class="left relative">
 													<div id="mvp-feat6-img" class="right relative">
@@ -589,7 +601,7 @@
 													</div><!--mvp-feat6-text-->
 												</div><!--mvp-feat6-main-->
 												</a>
-											<?php endwhile; wp_reset_postdata(); ?>
+											<?php } wp_reset_postdata(); ?>
 										</section><!--mvp-feat6-wrap-->
 									</div>
 									<div class="pure-u-md-1-2">
