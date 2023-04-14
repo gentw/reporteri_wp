@@ -380,49 +380,12 @@
 															</section><!--mvp-post-gallery-wrap-->
 														<?php } ?>
 														<div class="mvp-post-tags">
-															<span class="mvp-post-tags-header"><?php esc_html_e( 'Related Topics:', 'zox-news' ); ?></span><span itemprop="keywords"><?php the_tags('','','') ?></span>
+															<span class="mvp-post-tags-header"><?php esc_html_e( 'Etiketat:', 'zox-news' ); ?></span><span itemprop="keywords"><?php the_tags('','','') ?></span>
 														</div><!--mvp-post-tags-->
 														<div class="posts-nav-link">
-															<?php posts_nav_link(); ?>
+															<?php //posts_nav_link(); ?>
 														</div><!--posts-nav-link-->
-														<?php $mvp_prev_next = get_option('mvp_prev_next'); if ($mvp_prev_next == "true") { ?>
-															<div id="mvp-prev-next-wrap" class="left relative">
-																<?php $nextPost = get_next_post(TRUE, ''); if($nextPost) { $args = array( 'posts_per_page' => 1, 'include' => $nextPost->ID ); $nextPost = get_posts($args); foreach ($nextPost as $post) { setup_postdata($post); ?>
-																	<div class="mvp-next-post-wrap right relative">
-																		<a href="<?php the_permalink(); ?>" rel="bookmark">
-																		<div class="mvp-prev-next-cont left relative">
-																			<div class="mvp-next-cont-out left relative">
-																				<div class="mvp-next-cont-in">
-																					<div class="mvp-prev-next-text left relative">
-																						<span class="mvp-prev-next-label left relative"><?php esc_html_e( "Up Next", 'zox-news' ); ?></span>
-																						<p><?php the_title(); ?></p>
-																					</div><!--mvp-prev-next-text-->
-																				</div><!--mvp-next-cont-in-->
-																				<span class="mvp-next-arr fa fa-chevron-right right"></span>
-																			</div><!--mvp-prev-next-out-->
-																		</div><!--mvp-prev-next-cont-->
-																		</a>
-																	</div><!--mvp-next-post-wrap-->
-																<?php wp_reset_postdata(); } } ?>
-																<?php $prevPost = get_previous_post(TRUE, ''); if($prevPost) { $args = array( 'posts_per_page' => 1, 'include' => $prevPost->ID ); $prevPost = get_posts($args); foreach ($prevPost as $post) { setup_postdata($post); ?>
-																	<div class="mvp-prev-post-wrap left relative">
-																		<a href="<?php the_permalink(); ?>" rel="bookmark">
-																		<div class="mvp-prev-next-cont left relative">
-																			<div class="mvp-prev-cont-out right relative">
-																				<span class="mvp-prev-arr fa fa-chevron-left left"></span>
-																				<div class="mvp-prev-cont-in">
-																					<div class="mvp-prev-next-text left relative">
-																						<span class="mvp-prev-next-label left relative"><?php esc_html_e( "Don't Miss", 'zox-news' ); ?></span>
-																						<p><?php the_title(); ?></p>
-																					</div><!--mvp-prev-next-text-->
-																				</div><!--mvp-prev-cont-in-->
-																			</div><!--mvp-prev-cont-out-->
-																		</div><!--mvp-prev-next-cont-->
-																		</a>
-																	</div><!--mvp-prev-post-wrap-->
-																<?php wp_reset_postdata(); } } ?>
-															</div><!--mvp-prev-next-wrap-->
-														<?php } ?>
+														
 														<?php $author = get_option('mvp_author_box'); if ($author == "true") { ?>
 															<div id="mvp-author-box-wrap" class="left relative">
 																<div class="mvp-author-box-out right relative">
@@ -500,12 +463,7 @@
 																<span class="mvp-comment-but-text"><?php comments_number(__( 'Comments', 'zox-news'), esc_html__('Comments', 'zox-news'), esc_html__('Comments', 'zox-news')); ?></span>
 															</div><!--mvp-comments-button-->
 															<?php $disqus_id2 = esc_html($disqus_id); mvp_disqus_embed($disqus_id2); ?>
-														<?php } } else { ?>
-															<div id="mvp-comments-button" class="left relative mvp-com-click">
-																<span class="mvp-comment-but-text"><?php comments_number(__( 'Click to comment', 'zox-news'), esc_html__('1 Comment', 'zox-news'), esc_html__('% Comments', 'zox-news'));?></span>
-															</div><!--mvp-comments-button-->
-															<?php comments_template(); ?>
-														<?php } ?>
+														<?php } } ?>
 													<?php } ?>
 												</div><!--mvp-cont-read-wrap-->
 											</div><!--mvp-content-body-->
@@ -976,49 +934,12 @@
 															</section><!--mvp-post-gallery-wrap-->
 														<?php } ?>
 														<div class="mvp-post-tags">
-															<span class="mvp-post-tags-header"><?php esc_html_e( 'Related Topics:', 'zox-news' ); ?></span><span itemprop="keywords"><?php the_tags('','','') ?></span>
+															<span class="mvp-post-tags-header"><?php esc_html_e( 'Etiketat:', 'zox-news' ); ?></span><span itemprop="keywords"><?php the_tags('','','') ?></span>
 														</div><!--mvp-post-tags-->
 														<div class="posts-nav-link">
-															<?php posts_nav_link(); ?>
+															<?php //posts_nav_link(); ?>
 														</div><!--posts-nav-link-->
-														<?php $mvp_prev_next = get_option('mvp_prev_next'); if ($mvp_prev_next == "true") { ?>
-															<div id="mvp-prev-next-wrap" class="left relative">
-																<?php $nextPost = get_next_post(TRUE, ''); if($nextPost) { $args = array( 'posts_per_page' => 1, 'include' => $nextPost->ID ); $nextPost = get_posts($args); foreach ($nextPost as $post) { setup_postdata($post); ?>
-																	<div class="mvp-next-post-wrap right relative">
-																		<a href="<?php the_permalink(); ?>" rel="bookmark">
-																		<div class="mvp-prev-next-cont left relative">
-																			<div class="mvp-next-cont-out left relative">
-																				<div class="mvp-next-cont-in">
-																					<div class="mvp-prev-next-text left relative">
-																						<span class="mvp-prev-next-label left relative"><?php esc_html_e( "Up Next", 'zox-news' ); ?></span>
-																						<p><?php the_title(); ?></p>
-																					</div><!--mvp-prev-next-text-->
-																				</div><!--mvp-next-cont-in-->
-																				<span class="mvp-next-arr fa fa-chevron-right right"></span>
-																			</div><!--mvp-prev-next-out-->
-																		</div><!--mvp-prev-next-cont-->
-																		</a>
-																	</div><!--mvp-next-post-wrap-->
-																<?php wp_reset_postdata(); } } ?>
-																<?php $prevPost = get_previous_post(TRUE, ''); if($prevPost) { $args = array( 'posts_per_page' => 1, 'include' => $prevPost->ID ); $prevPost = get_posts($args); foreach ($prevPost as $post) { setup_postdata($post); ?>
-																	<div class="mvp-prev-post-wrap left relative">
-																		<a href="<?php the_permalink(); ?>" rel="bookmark">
-																		<div class="mvp-prev-next-cont left relative">
-																			<div class="mvp-prev-cont-out right relative">
-																				<span class="mvp-prev-arr fa fa-chevron-left left"></span>
-																				<div class="mvp-prev-cont-in">
-																					<div class="mvp-prev-next-text left relative">
-																						<span class="mvp-prev-next-label left relative"><?php esc_html_e( "Don't Miss", 'zox-news' ); ?></span>
-																						<p><?php the_title(); ?></p>
-																					</div><!--mvp-prev-next-text-->
-																				</div><!--mvp-prev-cont-in-->
-																			</div><!--mvp-prev-cont-out-->
-																		</div><!--mvp-prev-next-cont-->
-																		</a>
-																	</div><!--mvp-prev-post-wrap-->
-																<?php wp_reset_postdata(); } } ?>
-															</div><!--mvp-prev-next-wrap-->
-														<?php } ?>
+														
 														<?php $author = get_option('mvp_author_box'); if ($author == "true") { ?>
 															<div id="mvp-author-box-wrap" class="left relative">
 																<div class="mvp-author-box-out right relative">
@@ -1085,7 +1006,7 @@
 													<?php $mvp_related = get_option('mvp_related_posts'); if ($mvp_related == "true") { ?>
 														<div id="mvp-related-posts" class="left relative">
 															<h4 class="mvp-widget-home-title">
-																<span class="mvp-widget-home-title"><?php esc_html_e( 'You may like', 'zox-news' ); ?></span>
+																<span class="mvp-widget-home-title"><?php esc_html_e( 'T&euml; ngjajshme', 'zox-news' ); ?></span>
 															</h4>
 															<?php mvp_RelatedPosts(); ?>
 														</div><!--mvp-related-posts-->
@@ -1096,12 +1017,7 @@
 																<span class="mvp-comment-but-text"><?php comments_number(__( 'Comments', 'zox-news'), esc_html__('Comments', 'zox-news'), esc_html__('Comments', 'zox-news')); ?></span>
 															</div><!--mvp-comments-button-->
 															<?php $disqus_id2 = esc_html($disqus_id); mvp_disqus_embed($disqus_id2); ?>
-														<?php } } else { ?>
-															<div id="mvp-comments-button" class="left relative mvp-com-click">
-																<span class="mvp-comment-but-text"><?php comments_number(__( 'Click to comment', 'zox-news'), esc_html__('1 Comment', 'zox-news'), esc_html__('% Comments', 'zox-news'));?></span>
-															</div><!--mvp-comments-button-->
-															<?php comments_template(); ?>
-														<?php } ?>
+														<?php } }  ?>
 													<?php } ?>
 												</div><!--mvp-cont-read-wrap-->
 											</div><!--mvp-content-body-->
