@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="mvp-main-blog-wrap left relative">
+<div class="mvp-main-blog-wrap left relative reporteri_custom_category">
 	<div class="mvp-main-box">
 		<div class="mvp-main-blog-cont left relative">
 			<?php $mvp_feat_cat = get_option('mvp_feat_cat'); if ($mvp_feat_cat == "true") { if ( $paged < 2 ) { ?>
@@ -17,7 +17,7 @@
 								<div id="mvp-feat6-text">
 									<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php single_cat_title(); ?></span></h3>
 									<h2><?php the_title(); ?></h2>
-									<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
+									<p><?php echo wp_trim_words( get_the_excerpt(), 100, '...' ); ?></p>
 								</div><!--mvp-feat6-text-->
 							</div><!--mvp-feat6-main-->
 							</a>

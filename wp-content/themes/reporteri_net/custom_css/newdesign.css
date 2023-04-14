@@ -439,6 +439,39 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     .mvp-nav-menu a {
         color: #fff;
     }
+
+    .reporteri_custom_category  #mvp-feat6-text {
+        position: relative;
+        left: 18px;
+        top: 50px;
+        width: 35%;
+      }
+      
+      .reporteri_custom_category  #mvp-feat6-img {
+        line-height: 0;
+        width: 61%;
+        height: 400px;
+      }
+      
+      .reporteri_custom_category  .wp-post-image{
+         height: 100%;
+         object-fit: cover;
+      }
+      
+      .reporteri_custom_category  #mvp-feat6-text h2 {
+          color: #000!important;
+          font-size: 24px !important;
+      }
+      
+      .reporteri_custom_category  #mvp-feat6-text p {
+          color: #000!important;
+          font-size: 14px !important;
+      }
+      
+      
+      .reporteri_custom_category  #mvp-feat6-wrap {
+        background-color: rgba(206, 206, 206, 0.2);
+      }
     
 }
 /* Large devices (laptops/desktops, 992px and up) */
