@@ -408,6 +408,7 @@
 					</section>
 
 					<?php
+					$excluded_posts = array();
 					$category_slug = 'lajme';
 					$args = array(
 						'posts_per_page' => 1,
@@ -431,7 +432,9 @@
 										</div>
 										<div>
 											<?php if ($most_viewed->have_posts()) {
-											$most_viewed->the_post(); ?>
+											$most_viewed->the_post();
+											array_push($excluded_posts, get_the_ID());
+											?>
 											<a href="<?php echo get_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url()?>"></a>
 											<p class="aktualitet_main_category"><?php echo get_post_meta( get_the_ID(), 'category_name', true );?></p>
 											<h2 class="aktualitet_title"><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h2>
@@ -452,8 +455,10 @@
 												'cat' => $category_id,
 												'orderby' => 'date',
 												'order' => 'DESC',
+												'post__not_in' => $excluded_posts,
 											);
 											$showThreeLastedFromSpecifiedCats = new WP_Query( $args );
+											
 											if ( $showThreeLastedFromSpecifiedCats->have_posts() ) {
 												while ( $showThreeLastedFromSpecifiedCats->have_posts() ) {
 													$showThreeLastedFromSpecifiedCats->the_post();
@@ -469,6 +474,7 @@
 									<?php
 										foreach ( $latest_posts as $post ) {
 											setup_postdata( $post );
+											array_push($excluded_posts, get_the_ID());
 									?>
 										<div class="pure-g aktualitet_list_inner">
 											<div class="pure-u-3-5">
@@ -537,12 +543,14 @@
 											'category_name' => 'lajme',
 											'orderby' => 'date',
 											'order' => 'DESC',
+											'post__not_in' => $excluded_posts
 										);
 										$last_news2 = new WP_Query($args);
 
 										if ( $last_news2->have_posts() ) {
 											while ( $last_news2->have_posts() ) {
 												$last_news2->the_post();
+												array_push($excluded_posts, get_the_ID());
 									?>
 									<div class="pure-u-md-1-4 pure-u-1-2 aktualitet_more_inner">
 										<div>
