@@ -386,8 +386,11 @@
 				<div class="mvp-feat5-side-in">
 					<div class="mvp-feat5-main-wrap left relative">
 						<div class="mvp-feat5-mid-wrap right relative">
-							<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => get_option('mvp_feat_posts_tags'), 'posts_per_page' => '1', 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
+						<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php esc_html_e( 'Extra', 'zox-news' ); ?></span></h3>
+																								<!-- add extra 1 -->
+							<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => 'lajme', 'posts_per_page' => '1', 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
+								
 								<div class="mvp-feat5-mid-main left relative">
 									<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 										<div class="mvp-feat5-mid-main-img left relative">
@@ -415,7 +418,8 @@
 								</a>
 							<?php endwhile; wp_reset_postdata(); ?>
 							<div class="mvp-feat5-mid-sub-wrap left relative">
-								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => get_option('mvp_feat_posts_tags'), 'post__not_in'=>$do_not_duplicate, 'posts_per_page' => '3', 'ignore_sticky_posts'=> 1  )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
+																									<!-- add extra 2 -->
+								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => 'lajme', 'post__not_in'=>$do_not_duplicate, 'posts_per_page' => '2', 'ignore_sticky_posts'=> 1  )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
 									<a href="<?php the_permalink(); ?>" rel="bookmark">
 									<div class="mvp-feat5-mid-sub-story left relative">
 										<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
@@ -456,7 +460,7 @@
 							</div><!--mvp-feat5-mid-sub-wrap-->
 						</div><!--mvp-feat5-mid-wrap-->
 						<div class="mvp-feat5-small-wrap left relative">
-							<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php esc_html_e( 'Latest', 'zox-news' ); ?></span></h3>
+							<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php esc_html_e( 'Sport', 'zox-news' ); ?></span></h3>
 							<?php global $do_not_duplicate; if (isset($do_not_duplicate)) { $paged = (get_query_var('page')) ? get_query_var('page') : 1; query_posts(array( 'posts_per_page' => '1', 'post__not_in'=>$do_not_duplicate, 'paged' =>$paged, 'ignore_sticky_posts'=> 1 )); if (have_posts()) : while (have_posts()) : the_post(); $do_not_duplicate[] = $post->ID; ?>
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
 								<div class="mvp-feat5-small-main left relative">
@@ -524,9 +528,9 @@
 							<?php $mvp_feat_ad = get_option('mvp_feat_ad'); if ($mvp_feat_ad) { echo do_shortcode(html_entity_decode($mvp_feat_ad)); } ?>
 						</div><!--mvp-feat1-list-ad-->
 					<?php } ?>
-					<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php echo esc_html(get_option('mvp_pop_head')); ?></span></h3>
-					<div class="mvp-feat5-side-list left relative">
-						<?php global $do_not_duplicate; global $post; $pop_days = esc_html(get_option('mvp_pop_days')); $popular_days_ago = "$pop_days days ago";  if(get_option('mvp_feat_ad')) { $mvp_feat_list_num = 7; } else { $mvp_feat_list_num = 10; }; $recent = new WP_Query(array('posts_per_page' => $mvp_feat_list_num, 'ignore_sticky_posts'=> 1, 'post__not_in' => $do_not_duplicate, 'orderby' => 'meta_value_num', 'order' => 'DESC', 'meta_key' => 'post_views_count', 'date_query' => array( array( 'after' => $popular_days_ago )) )); while($recent->have_posts()) : $recent->the_post(); ?>
+					<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head">Shendetesi</span></h3>
+					<div class="mvp-feat5-side-list left relative">																																																									<!-- add shendetesi -->						
+						<?php global $do_not_duplicate; global $post; $pop_days = esc_html(get_option('mvp_pop_days')); $popular_days_ago = "$pop_days days ago";  if(get_option('mvp_feat_ad')) { $mvp_feat_list_num = 7; } else { $mvp_feat_list_num = 10; }; $recent = new WP_Query(array('category_name' => 'lajme', 'posts_per_page' => $mvp_feat_list_num, 'ignore_sticky_posts'=> 1, 'post__not_in' => $do_not_duplicate, 'orderby' => 'meta_value_num', 'order' => 'DESC', 'meta_key' => 'post_views_count', 'date_query' => array( array( 'after' => $popular_days_ago )) )); while($recent->have_posts()) : $recent->the_post(); ?>
 							<a href="<?php the_permalink(); ?>" rel="bookmark">
 							<div class="mvp-feat1-list-cont left relative">
 								<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
@@ -562,8 +566,9 @@
 <?php } else if( $mvp_feat_layout == "5" ) { ?>
 	<div class="mvp-main-box">
 		<section id="mvp-feat6-wrap" class="left relative">
-			<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => get_option('mvp_feat_posts_tags'), 'posts_per_page' => '1', 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
+			<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => 'show_time', 'posts_per_page' => '1', 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark">
+			
 				<div id="mvp-feat6-main" class="left relative">
 					<div id="mvp-feat6-img" class="right relative">
 						<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
