@@ -1279,3 +1279,67 @@ h1.mvp-post-title{
 .mvp-widget-feat1-bot-story5 {
     margin-left: 0;
 }
+
+.mvp-feat5-mid-main-text h2{
+    font-size: 24px!important;
+}
+
+.mvp-feat5-mid-main-text p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-feat1-list-text h2 {
+    font-size: 16px;
+}
+.mvp-feat1-list-text p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.mvp-feat5-mid-sub-text h2 {
+    font-size: 16px;
+}
+
+.mvp-feat5-mid-sub-text  p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-widget-dark-feat-text h2 {
+    font-size: 24px;
+}
+
+.mvp-widget-dark-feat-text  p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-widget-dark-sub-text h2 {
+    font-size: 16px;
+}
+.mvp-widget-dark-sub-text  p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-widget-feat1-bot-text h2 {
+    font-size: 16px;
+}
+.mvp-widget-feat1-bot-text  p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-blog-story-col .mvp-blog-story-text h2 {
+    font-size: 16px;
+}
+
+.mvp-blog-story-col .mvp-blog-story-text  p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvp-feat5-small-main-text p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
