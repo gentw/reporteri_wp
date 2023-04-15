@@ -460,7 +460,7 @@
 							</div><!--mvp-feat5-mid-sub-wrap-->
 						</div><!--mvp-feat5-mid-wrap-->
 						<div class="mvp-feat5-small-wrap left relative">
-							<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php esc_html_e( 'Sport', 'zox-news' ); ?></span></h3>
+							<h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"><?php esc_html_e( 'Show Time', 'zox-news' ); ?></span></h3>
 							<?php global $do_not_duplicate; if (isset($do_not_duplicate)) { $paged = (get_query_var('page')) ? get_query_var('page') : 1; query_posts(array( 'posts_per_page' => '1', 'post__not_in'=>$do_not_duplicate, 'paged' =>$paged, 'ignore_sticky_posts'=> 1 )); if (have_posts()) : while (have_posts()) : the_post(); $do_not_duplicate[] = $post->ID; ?>
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
 								<div class="mvp-feat5-small-main left relative">
