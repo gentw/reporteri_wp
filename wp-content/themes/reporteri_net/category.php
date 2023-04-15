@@ -310,7 +310,7 @@
 						<?php } ?>
 						<div class="mvp-inf-more-wrap left relative">
 							<?php $mvp_infinite_scroll = get_option('mvp_infinite_scroll'); if ($mvp_infinite_scroll == "true") { if (isset($mvp_infinite_scroll)) { ?>
-								<a href="#" class="mvp-inf-more-but"><?php esc_html_e( 'More Posts', 'zox-news' ); ?></a>
+								<a href="#" class="mvp-inf-more-but"><?php esc_html_e( 'Te tjera', 'zox-news' ); ?></a>
 							<?php } } ?>
 							<div class="mvp-nav-links">
 								<?php if (function_exists("pagination")) { pagination($wp_query->max_num_pages); } ?>

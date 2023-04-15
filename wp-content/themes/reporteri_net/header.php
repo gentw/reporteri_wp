@@ -388,8 +388,43 @@
 							<div class="pure-u-md-6-24 left_side zindex2001">
 								<div class="weather-wrapper">
 									<div class="weather-card madrid">
-										<h1>E shtune</h1>
-										<p>Mars 4, 2023</p>
+										
+										<?php 
+											$albanianDayNames = array(
+												'Monday'    => 'E hënë',
+												'Tuesday'   => 'E martë',
+												'Wednesday' => 'E mërkurë',
+												'Thursday'  => 'E enjte',
+												'Friday'    => 'E premte',
+												'Saturday'  => 'E shtunë',
+												'Sunday'    => 'E diel'
+											);
+											$current_day_name = date_i18n(__('l'), strtotime('today'));
+
+											$albanianMonthNames = array(
+												'January'   => 'Janar',
+												'February'  => 'Shkurt',
+												'March'     => 'Mars',
+												'April'     => 'Prill',
+												'May'       => 'Maj',
+												'June'      => 'Qershor',
+												'July'      => 'Korrik',
+												'August'    => 'Gusht',
+												'September' => 'Shtator',
+												'October'   => 'Tetor',
+												'November'  => 'Nentor',
+												'December'  => 'Dhjetor'
+											);
+											
+											$currentMonth = date('F');
+											$currentDay = date('j');
+											$currentYear = date('Y');
+											
+											
+										
+										?>
+										<h1><?php echo $albanianDayNames[$current_day_name]; ?></h1>
+										<p><?php echo $albanianMonthNames[$currentMonth] . ' ' . $currentDay . ', ' . $currentYear; ?></p>
 									</div>
 								</div>
 								
