@@ -428,7 +428,11 @@
 									</div>
 								</div>
 								
-								<img style="margin-top: 10px;" src="/wp-content/uploads/2023/02/adbanner.jpg">
+								<div style="margin-top:10px;">
+								<?php if (function_exists ('adinserter')) echo adinserter (2); ?>
+								</div>
+
+								
                             </div>
                         </div>
 

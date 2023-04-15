@@ -23,8 +23,23 @@
 							</a>
 						<?php } endwhile; wp_reset_postdata(); ?>
 					</section><!--mvp-feat6-wrap-->
+					
 				<?php } ?>
 			<?php } } ?>
+
+			<section id="mvp_ad_widget-3" class="mvp-widget-home left relative mvp_ad_widget" style="padding-bottom: 40px;"><div class="mvp-main-box">			
+							
+						<div class="mvp-widget-ad left relative">
+
+
+							<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
+
+
+							<?php if (function_exists ('adinserter')) echo adinserter (3); ?>
+						</div>
+					
+					</section>
+					
 			<div class="mvp-main-blog-out left relative">
 				<div class="mvp-main-blog-in">
 					<div class="mvp-main-blog-body left relative">

@@ -472,6 +472,7 @@
 								</div><!--mvp-content-wrap-->
 						<?php $mvp_more_posts = get_option('mvp_more_posts'); if ($mvp_more_posts == "true") { ?>
 							<div id="mvp-post-add-box">
+							
 								<div id="mvp-post-add-wrap" class="left relative">
 									<?php global $post; $post_nr=0; $mvp_more_num = esc_html(get_option('mvp_more_num')); $category = get_the_category(); $current_cat = $category[0]->cat_ID; $recent = new WP_Query(array( 'category_name' => "instant", 'posts_per_page' => -1, 'post__not_in' => array( $post->ID ), 'date_query' => array(
         array(
@@ -480,10 +481,36 @@
             'day' => date( 'd' ),
         ),
     ) )); while($recent->have_posts()) : $recent->the_post(); ++$post_nr?>
+	<section id="mvp_ad_widget-3" class="mvp-widget-home left relative mvp_ad_widget" style="padding-bottom: 40px;"><div class="mvp-main-box">			
+							
+							<div class="mvp-widget-ad left relative">
+	
+	
+								<?php //if (function_exists ('adinserter')) echo adinserter (1); ?>
+	
+	
+								<?php if (function_exists ('adinserter')) echo adinserter (3); ?>
+							</div>
+						
+						</section>
+	
 										<div id="instant_post_<?php echo $post_nr ?>" class="mvp-post-add-story left relative reporteri_instant_post">
+											
+										
+
 											<div class="mvp-post-add-head left relative">
+											<?php $mvp_featured_img = get_option('mvp_featured_img'); $mvp_show_hide = get_post_meta($post->ID, "mvp_featured_image", true); if ($mvp_featured_img == "true") { if ($mvp_show_hide !== "hide") { ?>
+													<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
+														<div class="mvp-post-add-img left relative">
+															<?php the_post_thumbnail(''); ?>
+														</div><!--mvp-post-feat-img-->
+														<?php global $post; if(get_post_meta($post->ID, "mvp_photo_credit", true)): ?>
+															<span class="mvp-feat-caption"><?php echo wp_kses_post(get_post_meta($post->ID, "mvp_photo_credit", true)); ?></span>
+														<?php endif; ?>
+													<?php } ?>
+												<?php } } ?>
+												<h1 id="instant_post_<?php echo $post_nr ?>" class="mvp-post-title left"><?php the_title(); ?></h1>
 												
-												<h1 class="mvp-post-title left"><?php the_title(); ?></h1>
 												<?php if ( has_excerpt() ) { ?>
 													<span class="mvp-post-excerpt left"><?php the_excerpt(); ?></span>
 												<?php } ?>
@@ -504,16 +531,7 @@
 												<?php } ?>
 											</div><!--mvp-post-add-head-->
 											<div class="mvp-post-add-body left relative">
-												<?php $mvp_featured_img = get_option('mvp_featured_img'); $mvp_show_hide = get_post_meta($post->ID, "mvp_featured_image", true); if ($mvp_featured_img == "true") { if ($mvp_show_hide !== "hide") { ?>
-													<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
-														<div class="mvp-post-add-img left relative">
-															<?php the_post_thumbnail(''); ?>
-														</div><!--mvp-post-feat-img-->
-														<?php global $post; if(get_post_meta($post->ID, "mvp_photo_credit", true)): ?>
-															<span class="mvp-feat-caption"><?php echo wp_kses_post(get_post_meta($post->ID, "mvp_photo_credit", true)); ?></span>
-														<?php endif; ?>
-													<?php } ?>
-												<?php } } ?>
+												
 												<div class="mvp-post-add-cont left relative">
 													<div class="mvp-post-add-main right relative">
 														<?php the_content(); ?>

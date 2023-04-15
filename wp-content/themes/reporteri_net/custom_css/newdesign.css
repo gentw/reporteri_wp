@@ -277,7 +277,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
       }
 
       .reporteri_instant_post {
-        padding: 20px 0 !important;
+        padding: 0 0 !important;
         margin-bottom: 0 !important;
       }
 }
@@ -529,7 +529,10 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     .mvp-main-box{
         width: 992px;
     } 
-
+/* 
+    .reporteri_custom_article .code-block {
+        padding: 10px 0;
+    } */
     
 
 }
@@ -993,6 +996,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     margin: 0 20px;
     list-style: disc;
     padding-right: 10px;
+    padding-top: 10px;
 }
 
 .reporteri_timeline_news ul li{
@@ -1005,7 +1009,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 }
 
 .reporteri_instant_post{
-    padding: 50px 0;
+    padding: 0 0;
 }
 
 .reporteri-mvp-post-title{
@@ -1357,4 +1361,20 @@ h1.mvp-post-title{
 
 #mvp_home_feat1_widget-1{
     padding-top: 50px;
+}
+
+.mvp-post-add-story{
+    border-top: none;
+}
+
+#mvp-post-add-wrap{
+    margin-top:0;
+}
+
+.reporteri_custom_article .mvp-widget-home {
+    margin-top: 40px;
+}
+.reporteri_custom_article .code-block {
+    text-align: left;
+    margin-left:50px !important;
 }

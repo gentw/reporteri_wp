@@ -3713,19 +3713,29 @@ jQuery(document).ready(function($) {
       jQuery("#mvp-fly-wrap").remove();
      
       var userScroll = $(document).scrollTop();
+      var userScroll = $(document).scrollTop();
 
-      setTimeout(function() {
-        $(window).scroll(function(event){
-         
-          var newScroll = $(document).scrollTop();
-          
-            if(userScroll - newScroll > 90 || newScroll - userScroll > 90){
-              $("#mvp_custom_nav_desktop").addClass("mvp_custom_nav_desktop_fixed");
-            } else {
-              $("#mvp_custom_nav_desktop").removeClass("mvp_custom_nav_desktop_fixed");
-            }
-        });
-      },500)
+      // Function to handle scroll event
+      function handleScroll() {
+        var newScroll = $(document).scrollTop();
+        if (userScroll - newScroll > 90 || newScroll - userScroll > 90) {
+          $("#mvp_custom_nav_desktop").addClass("mvp_custom_nav_desktop_fixed");
+        } else {
+          $("#mvp_custom_nav_desktop").removeClass("mvp_custom_nav_desktop_fixed");
+        }
+      }
+      
+      // Attach scroll event listener
+      $(window).on('scroll', handleScroll);
+      
+      // Check scroll position on page load and add class if condition is met
+      $(document).ready(function() {
+        var scrollPosition = $(document).scrollTop();
+        if (userScroll - scrollPosition > 90 || scrollPosition - userScroll > 90) {
+          $("#mvp_custom_nav_desktop").addClass("mvp_custom_nav_desktop_fixed");
+        }
+      });
+      
         
         
     }
