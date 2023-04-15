@@ -9,6 +9,18 @@
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logos/logo-large.png" alt="<?php bloginfo( 'name' ); ?>" data-rjs="2" /></a>
 							<?php } ?>
 						</div><!--mvp-foot-logo-->
+						<p class="footer-text-wrap" style="color: #eaeaea;
+width: 1114px;
+line-height: 1.5;
+margin: 0 auto;
+text-align: center;"><span style="margin-bottom: 50px;"><strong>Reporteri.net</strong> është gazetë online e lajmeve nga vendi dhe bota. Qëllim kryesor ka informimin e drejtë, të paanshëm dhe të shpejtë. <br>Reporteri.net, në pronësi të “<a href="https://arbk.rks-gov.net/page.aspx?id=1%2C38%2C191930&amp;fbclid=IwAR13IIC5lVy7YKCS_-X0nMnS1GfFltm3ixot36rhPu3injgqHPBtUT9gyO0" rel="noopener" target="_blank"><b>R Media L.L.C.</b></a>”, është themeluar në mars të vitit 2019 dhe drejtohet nga gazetarët Bekim Kabashi dhe Mentor Gjergjaj.
+</span><br><br>
+<span style="text-align: center; font-weight:bold; color: #ffffff!important">E-Mail: info@reporteri.net<br>
+Marketing: marketing@reporteri.net<br>
+Tel: +38349687666</span>
+
+
+</p>
 						<div id="mvp-foot-soc" class="left relative">
 							<ul class="mvp-foot-soc-list left relative">
 								<?php if(get_option('mvp_facebook')) { ?>

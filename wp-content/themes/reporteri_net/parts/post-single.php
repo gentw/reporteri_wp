@@ -452,7 +452,7 @@
 													<?php $mvp_related = get_option('mvp_related_posts'); if ($mvp_related == "true") { ?>
 														<div id="mvp-related-posts" class="left relative">
 															<h4 class="mvp-widget-home-title">
-																<span class="mvp-widget-home-title"><?php esc_html_e( 'You may like', 'zox-news' ); ?></span>
+																<span class="mvp-widget-home-title"><?php esc_html_e( 'T&euml; ngjajshme', 'zox-news' ); ?></span>
 															</h4>
 															<?php mvp_RelatedPosts(); ?>
 														</div><!--mvp-related-posts-->

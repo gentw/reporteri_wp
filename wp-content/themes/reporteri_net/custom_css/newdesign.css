@@ -1234,3 +1234,14 @@ h1.mvp-post-title{
 .mvp_custom_nav_desktop_fixed ul li.mvp-mega-dropdown .mvp-mega-dropdown {
     display: none;
 }
+
+#mvp-foot-menu {
+    margin-top: 20px;
+}
+
+#mvp-foot-menu ul li a{
+    color: #eaeaea !important;
+}
+#mvp-foot-copy p {
+    color: #eaeaea !important;
+}
