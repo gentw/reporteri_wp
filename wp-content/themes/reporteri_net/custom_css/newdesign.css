@@ -1263,3 +1263,19 @@ h1.mvp-post-title{
     max-width: 1140px;
 }
 
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.mvp-widget-feat1-bot-story:nth-child(1) {
+    margin-left: 0;
+}
+.mvp-widget-feat1-bot-story {
+    margin-bottom: 15px;
+}
+
+.mvp-widget-feat1-bot-story5 {
+    margin-left: 0;
+}

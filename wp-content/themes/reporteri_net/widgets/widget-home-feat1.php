@@ -173,9 +173,9 @@ class mvp_home_feat1_widget extends WP_Widget {
 					<div class="mvp-widget-feat1-cont left relative">
 						<?php global $do_not_duplicate; if (isset($do_not_duplicate)) { ?>
 							<?php if ($tagcat == 'tag') { ?>
-								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => $enterslug, 'posts_per_page' => '4', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+								<?php $i=0; global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '8', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); ++$i; $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+									<div class="<?php echo ($i == 5) ? 'mvp-widget-feat1-bot-story5' : '' ?> mvp-widget-feat1-bot-story left relative">
 									<a href="<?php the_permalink(); ?>" rel="bookmark">
-									<div class="mvp-widget-feat1-bot-story left relative">
 										<div class="mvp-widget-feat1-bot-img left relative">
 											<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 												<?php the_post_thumbnail('mvp-mid-thumb', array( 'class' => 'mvp-reg-img lazy' )); ?>
@@ -198,13 +198,16 @@ class mvp_home_feat1_widget extends WP_Widget {
 											<h2><?php the_title(); ?></h2>
 											<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
 										</div><!--mvp-widget-feat1-bot-text-->
+										</a>
 									</div><!--mvp-widget-feat1-bot-story-->
-									</a>
+									<?php if($i == 4): ?>
+										<div class="clearfix"></div>
+									<?php endif; ?>
 								<?php } endwhile; wp_reset_postdata(); ?>
 							<?php } else { ?>
-								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '4', 'post__not_in'=>$do_not_duplicate )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+								<?php $i=0; global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '8', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); ++$i; $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+									<div class="<?php echo ($i == 5) ? 'mvp-widget-feat1-bot-story5' : '' ?> mvp-widget-feat1-bot-story left relative">
 									<a href="<?php the_permalink(); ?>" rel="bookmark">
-									<div class="mvp-widget-feat1-bot-story left relative">
 										<div class="mvp-widget-feat1-bot-img left relative">
 											<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 												<?php the_post_thumbnail('mvp-mid-thumb', array( 'class' => 'mvp-reg-img lazy' )); ?>
@@ -225,16 +228,20 @@ class mvp_home_feat1_widget extends WP_Widget {
 												<span class="mvp-cd-cat left relative"><?php $category = get_the_category(); echo esc_html( $category[0]->cat_name ); ?></span><span class="mvp-cd-date left relative"><?php printf( esc_html__( '%s ago', 'zox-news' ), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) ); ?></span>
 											</div><!--mvp-cat-date-wrap-->
 											<h2><?php the_title(); ?></h2>
+											<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
 										</div><!--mvp-widget-feat1-bot-text-->
+										</a>
 									</div><!--mvp-widget-feat1-bot-story-->
-									</a>
+									<?php if($i == 4): ?>
+										<div class="clearfix"></div>
+									<?php endif; ?>
 								<?php } endwhile; wp_reset_postdata(); ?>
 							<?php } ?>
 						<?php } else { ?>
 							<?php if ($tagcat == 'tag') { ?>
-								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'tag' => $enterslug, 'posts_per_page' => '4', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+								<?php $i=0; global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '8', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); ++$i; $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+									<div class="<?php echo ($i == 5) ? 'mvp-widget-feat1-bot-story5' : '' ?> mvp-widget-feat1-bot-story left relative">
 									<a href="<?php the_permalink(); ?>" rel="bookmark">
-									<div class="mvp-widget-feat1-bot-story left relative">
 										<div class="mvp-widget-feat1-bot-img left relative">
 											<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 												<?php the_post_thumbnail('mvp-mid-thumb', array( 'class' => 'mvp-reg-img lazy' )); ?>
@@ -257,13 +264,16 @@ class mvp_home_feat1_widget extends WP_Widget {
 											<h2><?php the_title(); ?></h2>
 											<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
 										</div><!--mvp-widget-feat1-bot-text-->
+										</a>
 									</div><!--mvp-widget-feat1-bot-story-->
-									</a>
+									<?php if($i == 4): ?>
+										<div class="clearfix"></div>
+									<?php endif; ?>
 								<?php } endwhile; wp_reset_postdata(); ?>
 							<?php } else { ?>
-								<?php global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '4', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+								<?php $i=0; global $do_not_duplicate; global $post; $recent = new WP_Query(array( 'category_name' => $enterslug, 'posts_per_page' => '8', 'post__not_in'=>$do_not_duplicate, 'ignore_sticky_posts'=> 1 )); while($recent->have_posts()) : $recent->the_post(); ++$i; $do_not_duplicate[] = $post->ID; if (isset($do_not_duplicate)) { ?>
+									<div class="<?php echo ($i == 5) ? 'mvp-widget-feat1-bot-story5' : '' ?> mvp-widget-feat1-bot-story left relative">
 									<a href="<?php the_permalink(); ?>" rel="bookmark">
-									<div class="mvp-widget-feat1-bot-story left relative">
 										<div class="mvp-widget-feat1-bot-img left relative">
 											<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 												<?php the_post_thumbnail('mvp-mid-thumb', array( 'class' => 'mvp-reg-img lazy' )); ?>
@@ -284,9 +294,13 @@ class mvp_home_feat1_widget extends WP_Widget {
 												<span class="mvp-cd-cat left relative"><?php $category = get_the_category(); echo esc_html( $category[0]->cat_name ); ?></span><span class="mvp-cd-date left relative"><?php printf( esc_html__( '%s ago', 'zox-news' ), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) ); ?></span>
 											</div><!--mvp-cat-date-wrap-->
 											<h2><?php the_title(); ?></h2>
+											<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
 										</div><!--mvp-widget-feat1-bot-text-->
+										</a>
 									</div><!--mvp-widget-feat1-bot-story-->
-									</a>
+									<?php if($i == 4): ?>
+										<div class="clearfix"></div>
+									<?php endif; ?>
 								<?php } endwhile; wp_reset_postdata(); ?>
 							<?php } ?>
 						<?php } ?>
