@@ -919,6 +919,10 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 .mvp-post-soc-wrap {
     margin-left: -68px;
 }
+.reporteri_custom_article .mvp-post-soc-wrap {
+    margin-left: 0;
+    display: none;
+}
 
 #mvp-content-body{
     margin-left: -40px;
@@ -1114,6 +1118,10 @@ background: #195e7d !important;
     margin-left: 0 !important;
     padding-left: 0 !important;
     }
+
+    .reporteri_custom_article #mvp-content-wrap, #mvp-post-add-box {
+        max-width: 900px !important;
+    }
 }
 
 .mvp-nav-menu ul li.mvp-mega-dropdown .mvp-mega-dropdown {
@@ -1174,4 +1182,20 @@ h1.mvp-post-title{
 }
 #mvp-post-head {
     margin-bottom: 15px;
+}
+
+.mvp-post-add-cont{
+    height: auto ;
+}
+
+.mvp-post-add-link{
+    display: none;
+}
+
+.reporteri_custom_article .mvp-post-add-img img {
+    width: 100% !important;
+}
+.reporteri_custom_article .mvp-post-add-main{
+    width: 100%;
+    margin:0 !important;
 }

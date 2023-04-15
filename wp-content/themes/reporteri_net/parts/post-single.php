@@ -2,7 +2,7 @@
 <?php global $author; $userdata = get_userdata($author); ?>
 
 
-<?php if(get_field( "live_article" ) == "YES") { ?>
+<?php if(get_field( "live_article" ) == "YES" && $_GET['live']) { ?>
 	<article id="mvp-article-wrap" class="reporteri_custom_article" itemscope itemtype="http://schema.org/NewsArticle">
 	<!-- <div class="reporteri_instant_post" id="instant_post_0"></div> -->
 	<div class="reporteri_timeline_news">
@@ -482,7 +482,7 @@
     ) )); while($recent->have_posts()) : $recent->the_post(); ++$post_nr?>
 										<div id="instant_post_<?php echo $post_nr ?>" class="mvp-post-add-story left relative reporteri_instant_post">
 											<div class="mvp-post-add-head left relative">
-												<h3 class="mvp-post-cat left relative"><a class="mvp-post-cat-link" href="<?php $category = get_the_category(); $category_id = get_cat_ID( $category[0]->cat_name ); $category_link = get_category_link( $category_id ); echo esc_url( $category_link ); ?>"><span class="mvp-post-cat left"><?php $category = get_the_category(); echo esc_html( $category[0]->cat_name ); ?></span></a></h3>
+												
 												<h1 class="mvp-post-title left"><?php the_title(); ?></h1>
 												<?php if ( has_excerpt() ) { ?>
 													<span class="mvp-post-excerpt left"><?php the_excerpt(); ?></span>

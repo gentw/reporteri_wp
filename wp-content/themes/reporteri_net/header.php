@@ -358,7 +358,7 @@
 											$isLive->the_post(); 
 										?>
                                         <div class="articles_below_1_inner">
-                                            <a href="<?php echo get_permalink(); ?>">
+                                            <a href="<?php echo get_permalink(); ?>?live=1">
                                                 <img class="img-full" src="<?php echo get_the_post_thumbnail_url() ?>">
                                             
                                                 <h2 class="ring-container">
