@@ -275,6 +275,11 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     .single #mvp-content-body-top {
         max-height: 100% !important;
       }
+
+      .reporteri_instant_post {
+        padding: 20px 0 !important;
+        margin-bottom: 0 !important;
+      }
 }
 
 @media(max-width: 767px) {
@@ -440,7 +445,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
     .mvp_custom_nav_desktop_fixed{
         position: fixed;
         z-index: 2;
-        padding: 15px 0 !important;
+        padding: 15px 0 ;
     }
 
     .mvp-nav-small-mid_desktop{
@@ -1215,4 +1220,17 @@ h1.mvp-post-title{
 
 .mvp-reg-img{
     width: 100%;
+}
+
+.mvp_custom_nav_desktop_fixed {
+    padding: 2px 0 !important;
+}
+.mvp_custom_nav_desktop_fixed img {
+    width: 150px;
+    margin-top: 5px;
+}
+
+
+.mvp_custom_nav_desktop_fixed ul li.mvp-mega-dropdown .mvp-mega-dropdown {
+    display: none;
 }
