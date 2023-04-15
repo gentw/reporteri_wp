@@ -513,7 +513,6 @@ https://github.com/pure-css/pure/blob/master/LICENSE
         
         .more_news_new_dsng .mvp-blog-story-col {
             width: 30.95% !important;
-            margin-bottom: 30px;
         }
     
 }
@@ -1342,4 +1341,20 @@ h1.mvp-post-title{
 .mvp-feat5-small-main-text p {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
+}
+
+.code-block{
+    text-align: center;
+}
+
+.mvp-widget-home {
+    margin-top: 0px;
+}
+
+.intro_new_dsng {
+    padding-bottom: 50px;
+}
+
+#mvp_home_feat1_widget-1{
+    padding-top: 50px;
 }

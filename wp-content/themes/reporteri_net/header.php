@@ -435,9 +435,12 @@
 						<section id="mvp_ad_widget-3" class="mvp-widget-home left relative mvp_ad_widget" style="padding-bottom: 100px;"><div class="mvp-main-box">			
 							
 						<div class="mvp-widget-ad left relative">
-								<span class="mvp-ad-label">Advertisement</span>
-								<!-- Revive Adserver iFrame Tag - Generated with Revive Adserver v5.3.1 -->
-<iframe id='a713e963' name='a713e963' src='http://reporteri.net/reklamap/www/delivery/afr.php?zoneid=23&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='930' height='180' allow='autoplay'><a href='http://reporteri.net/reklamap/www/delivery/ck.php?n=aa9e2e2f&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://reporteri.net/reklamap/www/delivery/avw.php?zoneid=23&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa9e2e2f' border='0' alt='' /></a></iframe>			</div><!--mvp-widget-ad-->
+
+
+<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
+
+
+								<?php if (function_exists ('adinserter')) echo adinserter (4); ?>
 						</div>
 					
 					</section>
@@ -678,6 +681,19 @@
 								</div>
 							</div>
 						</section>
+
+						<section id="mvp_ad_widget-3" class="mvp-widget-home left relative mvp_ad_widget" style="padding-bottom: 100px;"><div class="mvp-main-box">			
+							
+						<div class="mvp-widget-ad left relative">
+
+
+<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
+
+
+								<?php if (function_exists ('adinserter')) echo adinserter (3); ?>
+						</div>
+					
+					</section>
 
                     <?php                      
                         }
