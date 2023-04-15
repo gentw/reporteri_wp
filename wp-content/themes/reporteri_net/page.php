@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<article id="mvp-article-wrap" <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div id="mvp-article-cont" class="left relative">
+<article id="mvp-article-wrap" <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">	
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<div id="mvp-article-cont" class="left relative reporteri_page_custom">
 			<div class="mvp-main-box">
 				<div id="mvp-post-main" class="left relative">
 					<header id="mvp-post-head" class="left relative">
@@ -59,7 +59,6 @@
 								</div><!--mvp-content-wrap-->
 							</div><!--mvp-post-content-->
 						</div><!--mvp-post-main-in-->
-						<?php get_sidebar(); ?>
 					</div><!--mvp-post-main-out-->
 				</div><!--mvp-post-main-->
 			</div><!--mvp-main-box-->

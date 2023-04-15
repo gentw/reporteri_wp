@@ -531,6 +531,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
         width: 992px;
     } 
 
+    
 
 }
 
@@ -931,8 +932,11 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 }
 
 #mvp-article-wrap #mvp-post-main{
-    width: 900px!important;
+    width: 900px;
 }
+/* .reporteri_page_custom #mvp-article-wrap #mvp-post-main {
+    width: 1140px !important;
+} */
 
 .mvp-post-soc-wrap {
     margin-left: -68px;
@@ -1245,3 +1249,17 @@ h1.mvp-post-title{
 #mvp-foot-copy p {
     color: #eaeaea !important;
 }
+
+.reporteri_page_custom #mvp-content-body {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+.reporteri_page_custom .mvp-post-main-in {
+    margin-right: 0 !important;
+}
+
+.reporteri_page_custom #mvp-content-wrap, .reporteri_page_custom #mvp-post-add-box {
+    max-width: 1140px;
+}
+
