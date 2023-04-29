@@ -9,6 +9,23 @@ jQuery(document).ready(function($) {
   		$(".mvp-fly-fade").toggleClass("mvp-fly-fade-trans");
 	});
 
+	if (jQuery('.mvp-feat5-mid-sub-img').find('.fallback-image').length >= 2) {
+	   var duplicateImg = jQuery('.mvp-feat5-mid-sub-img').find('.fallback-image:first');
+	   duplicateImg.remove();
+	}
+
+	if (jQuery('.mvp-widget-feat1-bot-img').find('.fallback-image').length >= 2) {
+	   var duplicateImg = jQuery('.mvp-widget-feat1-bot-img').find('.fallback-image:first');
+	   duplicateImg.remove();
+	}
+
+	if (jQuery('.mvp-related-img').find('.fallback-image').length >= 2) {
+	   var duplicateImg = jQuery('.mvp-related-img').find('.fallback-image:first');
+	   duplicateImg.remove();
+	}
+
+	
+
 	// Back to Top Button
     	var duration = 500;
     	$('.back-to-top').on('click', function(event) {

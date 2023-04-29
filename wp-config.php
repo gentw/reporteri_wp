@@ -20,13 +20,13 @@
 define( 'WP_AUTO_UPDATE_CORE', false );
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'reporteri_webnew' );
+define( 'DB_NAME', 'webnew' );
 
 /** Database username */
-define( 'DB_USER', 'gent' );
+define( 'DB_USER', 'webnew' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'fr33d0m' );
+define( 'DB_PASSWORD', 'Gjakova123@' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -80,6 +80,8 @@ $table_prefix = 'rep23orteri_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
+
+define( 'WP_MEMORY_LIMIT', '256M' );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

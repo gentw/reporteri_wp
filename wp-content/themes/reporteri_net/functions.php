@@ -2711,4 +2711,26 @@ function insert_adsense_ads($content) {
 }
 add_filter('the_content', 'insert_adsense_ads');
 
+
+/**
+ * Default post thumbnail image.
+ *
+ * @param  string $html The Output HTML of the post thumbnail
+ * @param  int $post_id The post ID
+ * @param  int $post_thumbnail_id The attachment id of the image
+ * @param  string $size The size requested or default
+ * @param  mixed string/array $attr Query string or array of attributes
+ * @return string $html the Output HTML of the post thumbnail
+ */
+function ns_post_thumbnail_fb( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+ if ( empty( $html ) ) {
+    return sprintf(
+        '<img src="%s" class="mvp-reg-img wp-post-image fallback-image" />',
+        home_url().'/wp-content/uploads/2023/04/reporteri-social-share.png'
+    );
+}
+
+return $html;
+}
+add_filter( 'post_thumbnail_html', 'ns_post_thumbnail_fb', 20, 5 );
 ?>
